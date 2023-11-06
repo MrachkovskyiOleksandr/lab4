@@ -97,11 +97,14 @@ class _ExpensesState extends State<Expenses> {
           TextButton(
             onPressed: () {
               setState(() {
-                _showTotal = !_showTotal; // Перемикач для відображення загальних витрат по темах
+                _showTotal =
+                    !_showTotal; // Перемикач для відображення загальних витрат по темах
                 if (_showTotal) {
-                  _showDropdown = false; // Приховувати DropdownButton у режимі сумарних витрат
+                  _showDropdown =
+                      false; // Приховувати DropdownButton у режимі сумарних витрат
                 } else {
-                  _showDropdown = true; // Відображати DropdownButton у режимі окремих витрат
+                  _showDropdown =
+                      true; // Відображати DropdownButton у режимі окремих витрат
                 }
               });
             },
@@ -131,7 +134,9 @@ class _ExpensesState extends State<Expenses> {
       body: Column(
         children: [
           Chart(
-            memberExpenses: _showTotal ? allExpenses : selectedFamilyMemberExpenses, // Передаємо відповідні дані в Chart
+            memberExpenses: _showTotal
+                ? allExpenses
+                : selectedFamilyMemberExpenses, // Передаємо відповідні дані в Chart
           ),
           Expanded(
             child: selectedFamilyMemberExpenses.isNotEmpty
